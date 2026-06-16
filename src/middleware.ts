@@ -9,22 +9,22 @@ export default auth((req) => {
   const pathname = req.nextUrl.pathname;
   const session = req.auth;
 
-  // 1. Belum login
-  if (!session) {
-    return NextResponse.redirect(
-      new URL("/login", req.url)
-    );
-  }
+  // // 1. Belum login
+  // if (!session) {
+  //   return NextResponse.redirect(
+  //     new URL("/login", req.url)
+  //   );
+  // }
 
-  // 2. Dashboard admin check
-  if (
-    pathname.startsWith("/dashboard/admin") &&
-    session.user?.role !== "ADMIN"
-  ) {
-    return NextResponse.redirect(
-      new URL("/dashboard/user", req.url)
-    );
-  }
+  // // 2. Dashboard admin check
+  // if (
+  //   pathname.startsWith("/dashboard/admin") &&
+  //   session.user?.role !== "ADMIN"
+  // ) {
+  //   return NextResponse.redirect(
+  //     new URL("/dashboard/user", req.url)
+  //   );
+  // }
 
   return NextResponse.next();
 });
