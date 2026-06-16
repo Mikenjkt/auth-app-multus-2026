@@ -1,3 +1,4 @@
+import "./globals.css";
 import AuthProvider from "@/components/session-provider";
 
 export default function RootLayout({
